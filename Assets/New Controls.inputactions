@@ -1,0 +1,134 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "e4e1b800-7d24-436b-a9d2-53ca3d4d88c7",
+            "actions": [
+                {
+                    "name": "GoNextFeature",
+                    "type": "Value",
+                    "id": "4627ffbf-76e9-4d4c-9216-c39e1ffe10e4",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GoPrevFeature",
+                    "type": "Value",
+                    "id": "8fa0cee6-f373-41ae-951e-e211668206f9",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GoNextFeatureTest",
+                    "type": "Value",
+                    "id": "f54cd0dd-41f5-46d1-bff0-1738e4c0e8a1",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GoPrevFeatureTest",
+                    "type": "Button",
+                    "id": "3afc8ef3-f30a-4663-9b56-c28d419cd760",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GoToDefault",
+                    "type": "Button",
+                    "id": "a5bbae5c-db61-4445-8ce2-d8e16d4e7ebe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GoToPrevious",
+                    "type": "Button",
+                    "id": "121508f7-af39-4df9-8e14-f8e971109917",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "726fa7ba-d063-4282-bd9c-3c22900bc488",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoNextFeature",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1537ed0-58a2-4985-9696-c97271bcb78d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoNextFeatureTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50f3d4ea-a54d-4b7a-910e-eff3d96a771d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoPrevFeatureTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7773c167-9bc6-45d0-a553-ba2d9471953e",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoPrevFeature",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ba99216-463b-442b-822d-8eb703c982fd",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoToDefault",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44948331-7e8d-4853-8496-648d0123e285",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoToPrevious",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
