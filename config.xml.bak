@@ -1,0 +1,18 @@
+<config>
+	<testsToRun>
+		<test>
+			<name>BaseBIRP</name>
+			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRP/base.apk</appPath>
+			<scenesToTest>
+				<scene>Main</scene>
+			</scenesToTest>
+		</test>
+		<test>
+			<name>BaseBIRP</name>
+			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRP/base.apk</appPath>
+			<scenesToTest>
+				<scene>Main</scene>
+			</scenesToTest>
+		</test>
+	</testsToRun>
+</config>
