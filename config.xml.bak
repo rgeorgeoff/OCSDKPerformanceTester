@@ -8,8 +8,8 @@
 			</scenesToTest>
 		</test>
 		<test>
-			<name>BaseBIRP</name>
-			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRP/base.apk</appPath>
+			<name>Passthrough</name>
+			<appPath>UnityProjects\Passthrough\Builds\Passthrough/Passthrough.apk</appPath>
 			<scenesToTest>
 				<scene>Main</scene>
 			</scenesToTest>
