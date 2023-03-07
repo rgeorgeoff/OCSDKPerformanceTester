@@ -1,0 +1,34 @@
+<config>
+	<testsToRun>
+		<test>
+			<testName>BaseBIRP</testName>
+			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRP/base.apk</appPath>
+			<packageName>BaseBIRP</packageName>
+			<activityName>BaseBIRP</activityName>
+			<scenesToTest>
+				<scene>Main</scene>
+			</scenesToTest>
+			<enabled>false</enabled>
+		</test>
+		<test>
+			<testName>BaseURP</testName>
+			<appPath>UnityProjects/BaseURP/Builds/BaseURP/base.apk</appPath>
+			<packageName>BaseURP</packageName>
+			<activityName>BaseURP</activityName>
+			<scenesToTest>
+				<scene>Main</scene>
+			</scenesToTest>
+			<enabled>false</enabled>
+		</test>
+		<test>
+			<testName>Passthrough</testName>
+			<appPath>UnityProjects/Passthrough/Builds/Passthrough/Passthrough.apk</appPath>
+			<packageName>com.Meta.PerfTesting</packageName>
+			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
+			<scenesToTest>
+				<scene>Main</scene>
+			</scenesToTest>
+			<enabled>true</enabled>
+		</test>
+	</testsToRun>
+</config>

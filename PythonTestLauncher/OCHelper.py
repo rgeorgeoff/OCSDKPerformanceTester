@@ -62,6 +62,19 @@ def setupDeviceForTest(
         )
         return -1
 
+def clearLogcat():
+    return subprocess.run("adb logcat -c", capture_output=False)
+
+def getVrAPILogcat():
+    return subprocess.run("adb logcat -s VrApi -d", capture_output=True, text=True)
+
+def disableBothersomeFeatures(pin, deviceId=None):
+    result = __runAdbShell(f"content call --uri content://com.oculus.rc --method SET_PROPERTY --extra 'disable_guardian:b:true' --extra 'disable_dialogs:b:true' --extra 'disable_autosleep:b:true' --extra 'PIN:s:{pin}'", deviceId)
+    print(result.stdout)
+
+def enableBothersomeFeatures(pin, deviceId=None):
+    result = __runAdbShell(f"content call --uri content://com.oculus.rc --method SET_PROPERTY --extra 'disable_guardian:b:false' --extra 'disable_dialogs:b:false' --extra 'disable_autosleep:b:false' --extra 'PIN:s:{pin}'", deviceId)
+    print(result.stdout)
 
 # Install the specified APK and launch the app.
 def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
@@ -72,6 +85,8 @@ def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
 def sleepHeadset(deviceId=None):
     __runAdbShell("input keyevent POWER", deviceId)
 
+def closeAndClearApp(packageName, deviceId=None):
+    __runAdbShell(f"pm clear {packageName}", deviceId)
 
 def __runShellCommand(command):
     print(f"SHELL: {command}")
@@ -86,6 +101,9 @@ def __getDeviceArg(deviceId):
     else:
         return f" -s {deviceId} "
 
+def __disableDeviceFeatures(pin):
+    return f"adb shell content call --uri content://com.oculus.rc --method SET_PROPERTY --extra 'disable_guardian:b:true' --extra 'disable_dialogs:b:true' --extra 'disable_autosleep:b:true' --extra 'PIN:s:{pin}'"
+
 
 def __runAdbShell(command, deviceId):
     return __runShellCommand("adb" + __getDeviceArg(deviceId) + "shell " + command)
@@ -93,7 +111,6 @@ def __runAdbShell(command, deviceId):
 
 def __runAdbCommand(command, deviceId):
     return __runShellCommand("adb" + __getDeviceArg(deviceId) + command)
-
 
 def __waitForProperty(property, maxSeconds, deviceId):
     print(f"Waiting for {property} to turn true")
