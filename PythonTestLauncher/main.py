@@ -44,7 +44,7 @@ if __name__ == '__main__':
         print(f"#Collecting Logs")
         logs = getVrAPILogcat().stdout
         # parse the logs
-        print(f"#Parcing Logs")
+        print(f"#Parsing Logs")
         parsedLogs = parseLogs(logs)
         # print results
         print(f"Avg GPU% usage: {parsedLogs.gpuP}")
