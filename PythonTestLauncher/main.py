@@ -30,21 +30,29 @@ if __name__ == '__main__':
         #skip if not testing based off config
         if not testConfig.enabled:
             continue
+
+        print(f"## Started running test for: {testConfig.testName}")
         # clear logs
+        print(f"#Clearing adb logs")
         clearLogcat()
         # install and run the game
+        print(f"#Installing And Starting App: {testConfig.packageName}")
         installAndStartApp(testConfig.appPath, testConfig.packageName, testConfig.activityName)
         #give some time for app to boot and collect some logs
         # wait until app is done? - Read a log and until it prints some string its not done
+        print(f"#Waiting for app to load and run: {testConfig.packageName}")
         t.sleep(5)
         # capture logs
+        print(f"#Collecting Logs")
         print(getVrAPILogcat().stdout)
         print(getVrAPILogcat().stderr)
         # parse the logs
-            #TODO
+        print(f"#Parcing Logs")
+        #TODO
         # print results
-            # TODO
+        # TODO
         # close and clear app
+        print(f"#Closing and removing app")
         closeAndClearApp(testConfig.packageName)
 
     enableBothersomeFeatures(config['pin'])
