@@ -22,6 +22,10 @@ if __name__ == '__main__':
     config = vars(args)
     print(config)
 
+    # wake device up if asleep and wait a sec for the result
+    simulateKeyPressToWakeUp()
+    t.sleep(3)
+
     disableBothersomeFeatures(config['pin'])
 
     for testConfig in get_config_data():
@@ -38,8 +42,8 @@ if __name__ == '__main__':
         installAndStartApp(testConfig.appPath, testConfig.packageName, testConfig.activityName)
         #give some time for app to boot and collect some logs
         # wait until app is done? - Read a log and until it prints some string its not done
-        print(f"#Waiting for app to load and run: {testConfig.packageName}")
-        t.sleep(20)
+        print(f"#Waiting for app to load and run: {testConfig.packageName} - {testConfig.appRunTime} seconds")
+        t.sleep(testConfig.appRunTime)
         # capture logs
         print(f"#Collecting Logs")
         logs = getVrAPILogcat().stdout

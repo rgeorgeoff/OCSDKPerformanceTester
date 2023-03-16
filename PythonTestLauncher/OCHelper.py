@@ -81,6 +81,8 @@ def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
     __runAdbCommand(f"install {apkPath}", deviceId)
     __runAdbShell(f"am start -S {packageName}/{activityName}", deviceId)
 
+def simulateKeyPressToWakeUp(deviceId=None):
+    __runAdbShell("input keyevent KEYCODE_POWER", deviceId)
 
 def sleepHeadset(deviceId=None):
     __runAdbShell("input keyevent POWER", deviceId)

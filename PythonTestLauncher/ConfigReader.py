@@ -2,11 +2,12 @@ from bs4 import BeautifulSoup
 
 
 class Test:
-    def __init__(self, testName, age, packageName, activityName, enabled):
+    def __init__(self, testName, age, packageName, activityName, appRunTime, enabled):
         self.testName = testName
         self.appPath = age
         self.packageName = packageName
         self.activityName = activityName
+        self.appRunTime = appRunTime
         self.enabled = enabled == "true"
 
 
@@ -26,7 +27,7 @@ def get_config_data():
 
     for i in b_unique:
         tests.append(Test(i.testName.contents[0], "../" + i.appPath.contents[0], i.packageName.contents[0],
-                          i.activityName.contents[0], i.enabled.contents[0]))
+                          i.activityName.contents[0], i.appRunTime.contents[0], i.enabled.contents[0]))
 
     print(tests[0].appPath)
     return tests

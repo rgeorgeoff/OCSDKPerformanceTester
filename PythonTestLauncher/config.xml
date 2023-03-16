@@ -5,6 +5,7 @@
 			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRP/base.apk</appPath>
 			<packageName>BaseBIRP</packageName>
 			<activityName>BaseBIRP</activityName>
+			<appRunTime>15</appRunTime>
 			<scenesToTest>
 				<scene>Main</scene>
 			</scenesToTest>
@@ -15,6 +16,7 @@
 			<appPath>UnityProjects/BaseURP/Builds/BaseURP/base.apk</appPath>
 			<packageName>BaseURP</packageName>
 			<activityName>BaseURP</activityName>
+			<appRunTime>15</appRunTime>
 			<scenesToTest>
 				<scene>Main</scene>
 			</scenesToTest>
@@ -25,6 +27,7 @@
 			<appPath>UnityProjects/Passthrough/Builds/Passthrough/Passthrough.apk</appPath>
 			<packageName>com.Meta.PerfTesting</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
+			<appRunTime>20</appRunTime>
 			<scenesToTest>
 				<scene>Main</scene>
 			</scenesToTest>

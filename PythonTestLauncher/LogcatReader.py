@@ -11,7 +11,7 @@ def parseLogs(logs):
     lines = logs.split('\n')
     for line in reversed(lines):
         #only take last 10 logs of game running to average
-        if len(parsedLines) > 10:
+        if len(parsedLines) >= 10:
             break
         if "CPU&GPU=" in line:
             gpuP = line.split(",GPU%=", maxsplit=1)[1].split(",", 1)[0]
