@@ -78,8 +78,17 @@ def enableBothersomeFeatures(pin, deviceId=None):
 
 # Install the specified APK and launch the app.
 def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
-    __runAdbCommand(f"install {apkPath}", deviceId)
-    __runAdbShell(f"am start -S {packageName}/{activityName}", deviceId)
+    res = __runAdbCommand(f"install {apkPath}", deviceId)
+    if res.stderr:
+        print("killing test, error installing app:")
+        print(res.stderr)
+        return True
+    res = __runAdbShell(f"am start -S {packageName}/{activityName}", deviceId)
+    if res.stderr:
+        print("killing test, error on starting app:")
+        print(res.stderr)
+        return True
+    return False
 
 def simulateKeyPressToWakeUp(deviceId=None):
     __runAdbShell("input keyevent KEYCODE_POWER", deviceId)

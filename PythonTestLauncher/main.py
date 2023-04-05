@@ -20,7 +20,6 @@ if __name__ == '__main__':
     parser.add_argument("-t", "--timeout", help="App max time (seconds) to run before timeout. Default = 120")
     args = parser.parse_args()
     config = vars(args)
-    print(config)
 
     # wake device up if asleep and wait a sec for the result
     simulateKeyPressToWakeUp()
@@ -39,7 +38,9 @@ if __name__ == '__main__':
         clearLogcat()
         # install and run the game
         print(f"#Installing And Starting App: {testConfig.packageName}")
-        installAndStartApp(testConfig.appPath, testConfig.packageName, testConfig.activityName)
+        Error = installAndStartApp(testConfig.appPath, testConfig.packageName, testConfig.activityName)
+        if Error:
+            continue
         #give some time for app to boot and collect some logs
         # wait until app is done? - Read a log and until it prints some string its not done
         print(f"#Waiting for app to load and run: {testConfig.packageName} - {testConfig.appRunTime} seconds")
@@ -51,8 +52,8 @@ if __name__ == '__main__':
         print(f"#Parsing Logs")
         parsedLogs = parseLogs(logs)
         # print results
-        print(f"Avg GPU% usage: {parsedLogs.gpuP}")
-        print(f"Avg CPU% usage: {parsedLogs.cpuP}")
+        print(f"Avg GPU% usage: {parsedLogs.gpuP * 100}%")
+        print(f"Avg CPU% usage: {parsedLogs.cpuP * 100}%")
         print(getVrAPILogcat().stderr)
         # close and clear app
         print(f"#Closing and removing app")

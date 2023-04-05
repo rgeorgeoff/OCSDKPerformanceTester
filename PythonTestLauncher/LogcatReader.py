@@ -25,7 +25,11 @@ def parseLogs(logs):
         totalGpu += float(plog.gpuP)
         totalCpu += float(plog.cpuP)
     #return average ParsedLogs object
-    finalAvg = ParsedLogs(totalGpu/len(parsedLines),totalCpu/len(parsedLines))
+    finalAvg = ParsedLogs(0,0)
+    if len(parsedLines) < 1:
+        print(f"#ERROR: Logs failed to parse any lines with GPU or CPU data. logs: \n{logs}")
+    else:
+        finalAvg = ParsedLogs(totalGpu/len(parsedLines),totalCpu/len(parsedLines))
     return finalAvg
 
 
