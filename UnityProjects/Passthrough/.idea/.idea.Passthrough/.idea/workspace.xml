@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../BaseURP/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/Runtime/Volume/VolumeProfile.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678949725386</updated>
       <workItem from="1678949743474" duration="451000" />
-      <workItem from="1680709008619" duration="781000" />
+      <workItem from="1680709008619" duration="1380000" />
     </task>
     <servers />
   </component>

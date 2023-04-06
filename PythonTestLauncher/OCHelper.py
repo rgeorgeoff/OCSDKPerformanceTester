@@ -93,6 +93,11 @@ def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
 def simulateKeyPressToWakeUp(deviceId=None):
     __runAdbShell("input keyevent KEYCODE_POWER", deviceId)
 
+def setConstantClockSpeeds(deviceId=None):
+    __runAdbShell("setprop debug.oculus.cpuLevel 4", deviceId)
+    __runAdbShell("setprop debug.oculus.gpuLevel 4", deviceId)
+    __runAdbShell("setprop debug.oculus.adaclocks.force 0", deviceId)
+
 def sleepHeadset(deviceId=None):
     __runAdbShell("input keyevent POWER", deviceId)
 

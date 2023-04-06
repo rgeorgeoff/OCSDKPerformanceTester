@@ -22,7 +22,7 @@
 			<packageName>com.Meta.PerfTestingPassthrough1</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
-			<enabled>false</enabled>
+			<enabled>true</enabled>
 		</test>
 		<test>
 			<testName>Passthrough2</testName>

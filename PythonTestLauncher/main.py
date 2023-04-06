@@ -23,6 +23,7 @@ if __name__ == '__main__':
 
     # wake device up if asleep and wait a sec for the result
     simulateKeyPressToWakeUp()
+    setConstantClockSpeeds()
     t.sleep(3)
 
     disableBothersomeFeatures(config['pin'])

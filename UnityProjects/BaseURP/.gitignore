@@ -7,6 +7,8 @@
 /[Oo]bj/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+*/Builds/BaseURP/BaseURP_BurstDebugInformation_DoNotShip/*
+*/Builds/BaseURP/BaseURP_BurstDebugInformation_DoNotShip/*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
