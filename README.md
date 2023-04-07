@@ -24,5 +24,5 @@ You can enable and disable apps in the PythonTestLauncher\config.xml to only run
 - Run the script to see results.
 
 ## Weird results?
-- You can don your headset while the tests are running to ensure your tests are running properly and your scene is set up
+- You can don your headset while the tests are running to ensure your tests are running properly and your scene is set up and make sure you didnt get any errors reported in the console
 - Ensure you have sufficient appRunTime to get 10 seconds of scene stability from start up. So if start up and scene stability takes 11 seconds to reach, you would need a minimum of 21 seconds, and you should buffer it by another 2-3 seconds to be sure, so recommended appRunTime would be 24 (seconds).
