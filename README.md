@@ -3,8 +3,8 @@ A way to sequentially test our SDKs performance and give developers an idea of w
 
 ## How to Run
 
-You can run the code by running the main.py with an argument for the pin (-p).
-IE: python3 main.py -p 1234
+You can run the code by running the main.py with an argument for the pin (-p). IE:   
+```python3 main.py -p 1234```
 
 The devices logged in users pin number will be needed to programatically disable services from the device that get in the way of automated testing: Guardian, Dialogs, and Auto Sleep. These are reenabled by the script after testing is done.
 
