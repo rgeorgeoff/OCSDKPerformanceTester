@@ -6,7 +6,15 @@
 			<packageName>com.Meta.PerfTestBaseBIRP</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
-			<enabled>true</enabled>
+			<enabled>false</enabled>
+		</test>
+		<test>
+			<testName>BaseBIRPWithGeo</testName>
+			<appPath>UnityProjects/BaseBIRP/Builds/BaseBIRPWithGeo/BaseBIRPWithGeo.apk</appPath>
+			<packageName>com.Meta.PerfTestBaseBIRP</packageName>
+			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
+			<appRunTime>20</appRunTime>
+			<enabled>false</enabled>
 		</test>
 		<test>
 			<testName>BaseURP</testName>
@@ -14,7 +22,7 @@
 			<packageName>com.Meta.PerfTestBaseURP</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
-			<enabled>false</enabled>
+			<enabled>true</enabled>
 		</test>
 		<test>
 			<testName>Passthrough1</testName>
@@ -22,7 +30,7 @@
 			<packageName>com.Meta.PerfTestingPassthrough1</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
-			<enabled>true</enabled>
+			<enabled>false</enabled>
 		</test>
 		<test>
 			<testName>Passthrough2</testName>
@@ -31,6 +39,22 @@
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
 			<enabled>false</enabled>
+		</test>
+		<test>
+			<testName>PostFXSSAO</testName>
+			<appPath>UnityProjects/PostFX/Builds/PostFXSSAO/PostFXSSAO.apk</appPath>
+			<packageName>com.Meta.PerfTestPostFX</packageName>
+			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
+			<appRunTime>20</appRunTime>
+			<enabled>false</enabled>
+		</test>
+		<test>
+			<testName>PostFXSSAO_URP</testName>
+			<appPath>UnityProjects/URPPostFX/Builds/PostFXURPWithGeo/PostFXURPWithGeo.apk</appPath>
+			<packageName>com.Meta.PostFXURP</packageName>
+			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
+			<appRunTime>20</appRunTime>
+			<enabled>true</enabled>
 		</test>
 	</testsToRun>
 </config>

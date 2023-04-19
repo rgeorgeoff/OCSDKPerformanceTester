@@ -56,6 +56,7 @@ if __name__ == '__main__':
         # print results
         print(f"Avg GPU% usage: {parsedLogs.gpuP * 100}%")
         print(f"Avg CPU% usage: {parsedLogs.cpuP * 100}%")
+        print(f"Avg AppT: {parsedLogs.appT}ms")
         print(getVrAPILogcat().stderr)
         # close and clear app
         print(f"#Closing and removing app")

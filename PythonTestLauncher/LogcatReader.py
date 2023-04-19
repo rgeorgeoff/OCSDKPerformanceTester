@@ -1,9 +1,10 @@
 import re
 
 class ParsedLogs:
-    def __init__(self, gpuP, cpuP):
+    def __init__(self, gpuP, cpuP, appT):
         self.gpuP = gpuP
         self.cpuP = cpuP
+        self.appT = appT
 
 def parseLogs(logs):
     # get relevant lines from log
@@ -16,20 +17,23 @@ def parseLogs(logs):
         if "CPU&GPU=" in line:
             gpuP = line.split(",GPU%=", maxsplit=1)[1].split(",", 1)[0]
             cpuP = re.split(',',line.split(",CPU%=", maxsplit=1)[1].replace("(", ","))[0]
+            appT = line.split(",App=", maxsplit=1)[1].split("ms,", 1)[0]
             # for each line, make a parsed log
-            parsedLines.append(ParsedLogs(gpuP, cpuP))
+            parsedLines.append(ParsedLogs(gpuP, cpuP, appT))
     # for each parsed log, get the average over all of them or the last 10 seconds, whichever is less
     totalGpu = 0
     totalCpu = 0
+    totalAppT = 0
     for plog in parsedLines:
         totalGpu += float(plog.gpuP)
         totalCpu += float(plog.cpuP)
+        totalAppT += float(plog.appT)
     #return average ParsedLogs object
-    finalAvg = ParsedLogs(0,0)
+    finalAvg = ParsedLogs(0,0,0)
     if len(parsedLines) < 1:
         print(f"#ERROR: Logs failed to parse any lines with GPU or CPU data. logs: \n{logs}")
     else:
-        finalAvg = ParsedLogs(totalGpu/len(parsedLines),totalCpu/len(parsedLines))
+        finalAvg = ParsedLogs(totalGpu/len(parsedLines),totalCpu/len(parsedLines), totalAppT/len(parsedLines))
     return finalAvg
 
 
