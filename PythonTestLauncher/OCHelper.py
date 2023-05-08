@@ -94,8 +94,18 @@ def simulateKeyPressToWakeUp(deviceId=None):
     if(not detectIfDeviceScreenOn()):
         __runAdbShell("input keyevent KEYCODE_POWER", deviceId)
 
-def detectIfDeviceScreenOn(deviceId=None):
+def detectIfDeviceScreenMounted(deviceId=None):
     retuned = __runAdbShell("getprop sys.hmt.mounted", deviceId)
+    isOn = retuned.stdout[0]
+    return int(isOn)
+
+def detectIfDeviceScreenOn(deviceId=None):
+    retuned = __runAdbShell("getprop debug.tracing.screen_state", deviceId)
+    isOn = retuned.stdout[0]
+    return int(isOn) == 2
+
+def detectIfDeviceIdle(deviceId=None):
+    retuned = __runAdbShell("dumpsys deviceidle", deviceId)
     isOn = retuned.stdout[0]
     return int(isOn)
 
