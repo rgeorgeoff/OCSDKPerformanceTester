@@ -91,7 +91,13 @@ def installAndStartApp(apkPath, packageName, activityName, deviceId=None):
     return False
 
 def simulateKeyPressToWakeUp(deviceId=None):
-    __runAdbShell("input keyevent KEYCODE_POWER", deviceId)
+    if(not detectIfDeviceScreenOn()):
+        __runAdbShell("input keyevent KEYCODE_POWER", deviceId)
+
+def detectIfDeviceScreenOn(deviceId=None):
+    retuned = __runAdbShell("getprop sys.hmt.mounted", deviceId)
+    isOn = retuned.stdout[0]
+    return int(isOn)
 
 def setConstantClockSpeeds(deviceId=None):
     __runAdbShell("setprop debug.oculus.cpuLevel -1", deviceId)

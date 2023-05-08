@@ -6,7 +6,7 @@
 			<packageName>com.Meta.PerfTestBaseBIRP</packageName>
 			<activityName>com.unity3d.player.UnityPlayerActivity</activityName>
 			<appRunTime>20</appRunTime>
-			<enabled>false</enabled>
+			<enabled>true</enabled>
 		</test>
 		<test>
 			<testName>BaseBIRPWithGeo</testName>

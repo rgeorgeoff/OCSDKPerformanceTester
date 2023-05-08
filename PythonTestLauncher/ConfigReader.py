@@ -11,12 +11,12 @@ class Test:
         self.enabled = enabled == "true"
 
 
-def get_config_data():
+def get_config_data(fileName):
     # Reading the data inside the xml
     # file to a variable under the name
     # data
     tests = []
-    with open('config.xml', 'r') as f:
+    with open('Configs/'+fileName, 'r') as f:
         data = f.read()
 
     # Passing the stored data inside

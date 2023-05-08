@@ -18,8 +18,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="SDK perf test runner", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("-p", "--pin", help="pin of logged in user")
     parser.add_argument("-t", "--timeout", help="App max time (seconds) to run before timeout. Default = 120")
+    parser.add_argument("-r", "--runtest", help="Run specific tests comma seperated from config. Default is all with enabled set to true in the config. Example input: BaseURP,BaseBIRP")
+    parser.add_argument("-c", "--config", help="Run specific config. Default is DefaultConfig.xml", default="DefaultConfig.xml")
     args = parser.parse_args()
-    config = vars(args)
+    parsedArgs = vars(args)
 
     # wake device up if asleep and wait a sec for the result
     simulateKeyPressToWakeUp()
@@ -27,11 +29,14 @@ if __name__ == '__main__':
     setConstantClockSpeeds()
     t.sleep(1)
 
-    disableBothersomeFeatures(config['pin'])
+    disableBothersomeFeatures(parsedArgs['pin'])
 
-    for testConfig in get_config_data():
-        #skip if not testing based off config
-        if not testConfig.enabled:
+    for testConfig in get_config_data(parsedArgs["config"]):
+        #skip if not testing based off config OR if we have specified a specific test to run
+        if parsedArgs['runtest'] != "":
+            if testConfig.testName not in parsedArgs['runtest'].split(","):
+                continue
+        elif not testConfig.enabled:
             continue
 
         print(f"## Started running test for: {testConfig.testName}")
@@ -62,6 +67,6 @@ if __name__ == '__main__':
         print(f"#Closing and removing app")
         closeAndClearApp(testConfig.packageName)
 
-    enableBothersomeFeatures(config['pin'])
+    enableBothersomeFeatures(parsedArgs['pin'])
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
